@@ -27,7 +27,6 @@ defmodule Rumbl.Multimedia do
     |> user_videos_query(user)
     |> Repo.all()
   end
-  
 
   @doc """
   Gets a single video.
