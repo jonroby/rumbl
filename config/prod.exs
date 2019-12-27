@@ -53,3 +53,10 @@ config :logger, level: :info
 # Finally import the config/prod.secret.exs which loads secrets
 # and configuration from environment variables.
 import_config "prod.secret.exs"
+
+wolfram_app_id = System.get_env("WOLFRAM_APP_ID") ||
+  raise """
+  environment variable WOLFRAM_APP_ID is missing.
+  """
+
+config :info_sys, :wolfram, app_id: wolfram_app_id
